@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE web-app PUBLIC
+        '-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN'
+        'http://java.sun.com/dtd/web-app_2_3.dtd'>
+
+<web-app>
+    <!-- servlet definition -->
+    <servlet>
+        <servlet-name>NewSoftValleyServlet</servlet-name>
+        <servlet-class>com.newsoftvalley.rest.NewSoftValleyServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+        <init-param>
+            <param-name>resourceMapping</param-name>
+            <param-value>account->com.newsoftvalley.customer.AccountResource;order->com.newsoftvalley.customer.OrderResource</param-value>
+        </init-param>
+        <async-supported>true</async-supported>
+    </servlet>
+
+
+
+    <!-- servlet mappings -->
+    <servlet-mapping>
+        <servlet-name>NewSoftValleyServlet</servlet-name>
+        <url-pattern>/account/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewSoftValleyServlet</servlet-name>
+        <url-pattern>/order/*</url-pattern>
+    </servlet-mapping>
+</web-app>
